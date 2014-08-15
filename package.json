@@ -5,7 +5,7 @@
   "main": "braintree.js",
   "scripts": {
     "start": "node examples/serve",
-    "test": "protractor conf.js"
+    "test": "protractor spec/conf.js"
   },
   "repository": {
     "type": "git",
