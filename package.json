@@ -1,0 +1,24 @@
+{
+  "name": "ng-braintree",
+  "version": "0.0.0",
+  "description": "An Angular directive for Braintree Drop-in",
+  "main": "braintree.js",
+  "scripts": {
+    "start": "node examples/serve",
+    "test": "protractor conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jeffcarp/ng-braintree.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/jeffcarp/ng-braintree/issues"
+  },
+  "devDependencies": {
+    "phantomjs": "~1.9.7-15",
+    "braintree": "~1.17.0",
+    "express": "~4.8.4"
+  }
+}
