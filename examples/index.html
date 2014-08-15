@@ -1,0 +1,21 @@
+<!doctype>
+<html>
+<head>
+</head>
+<body>
+  <div ng-app="myapp">
+    <h1>Pay with Braingular</h1>
+    <div braintree-payment-form></div>
+  </div>
+
+  <script src="//cdn.partywavejs.org/angular"></script>
+  <script>
+    window.angular = require('angular');
+  </script>
+  <script src="/braintree.js"></script>
+  <script src="/module.js"></script>
+  <script>
+    angular.module('myapp', ['ng-braintree']);
+  </script>
+</body>
+</html>
