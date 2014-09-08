@@ -60,20 +60,12 @@
   <!-- Load Angular -->
   <script src="//cdn.partywavejs.org/angular"></script>
 
-  <!-- Assign angular to the window -->
-  <!-- (party wave delivers it as a CommonJS module but ng-braintree looks for it on window) -->
-  <script>
-    window.angular = require('angular');
-  </script>
-
   <!-- Braintree v.zero JS (includes Dropin) -->
   <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
 
-  <!-- Include ng-braintree -->
-  <script src="http://localhost:8000/module.js"></script>
-
   <!-- Now set up our app -->
   <script>
+    var angular = require('angular');
     var app = angular.module('myapp', ['ng-braintree']);
 
     // Your Angular code goes here
