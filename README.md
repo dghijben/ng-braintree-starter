@@ -1,13 +1,4 @@
-ng-braintree
-============
-
-This provides 2 Angular directives, `braintree-dropin` and `braintree-form`.
-
-It goes hand in hand with your [Braintree server code](https://developers.braintreepayments.com/start/hello-server).
-
-# Integration Steps
-
-# `ng-braintree` starter
+# Angular + Braintree Dropin starter
 
 Hopefully this is a useful starting point for those of you who want to use Braintree Dropin in your AngularJS app.
 
