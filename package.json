@@ -1,23 +1,21 @@
 {
-  "name": "ng-braintree",
+  "name": "ng-braintree-starter",
   "version": "0.0.0",
-  "description": "An Angular directive for Braintree Drop-in",
+  "description": "A starter application for using Braintree with Angular",
   "main": "braintree.js",
   "scripts": {
-    "start": "node examples/serve",
-    "test": "protractor spec/conf.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jeffcarp/ng-braintree.git"
+    "url": "git://github.com/jeffcarp/ng-braintree-starter.git"
   },
-  "author": "",
+  "author": "Jeff Carpenter",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/jeffcarp/ng-braintree/issues"
+    "url": "https://github.com/jeffcarp/ng-braintree-starter/issues"
   },
-  "devDependencies": {
-    "phantomjs": "~1.9.7-15",
+  "dependencies": {
     "braintree": "~1.17.0",
     "express": "~4.8.4"
   }

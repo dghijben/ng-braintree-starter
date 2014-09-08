@@ -1,12 +1,29 @@
-[work in progress] ng-braintree
+ng-braintree
 ============
 
-An Angular directive for the Braintree Drop-in payment form. Goes hand in hand with your [Braintree server code](https://developers.braintreepayments.com/start/hello-server)
+This provides 2 Angular directives, `braintree-dropin` and `braintree-form`.
 
-> NB: This is experimental. If you have any issues or comments, please file a GH issue :sun_with_face:
+It goes hand in hand with your [Braintree server code](https://developers.braintreepayments.com/start/hello-server).
 
 # Integration Steps
 
+# `ng-braintree` starter
+
+Hopefully this is a useful starting point for those of you who want to use Braintree Dropin in your AngularJS app.
+
+## Running the example
+
+```bash
+git clone git@github.com:jeffcarp/ng-braintree-starter.git
+cd ng-braintree-starter
+npm install
+```
+
 1. Get your merchant ID, client token, public key and private key from the [Sandbox](https://sandbox.braintreegateway.com/)
-2. Set up your server code to generate a client token
-3. ...
+2. Put those credentials into `[app.js](app.js)`
+
+```bash
+npm start
+```
+
+You can view it at [http://localhost:9000](http://localhost:9000)

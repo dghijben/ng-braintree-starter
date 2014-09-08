@@ -1,0 +1,104 @@
+<!doctype>
+<html>
+<head>
+  <title>Braingular</title>
+  <style>
+    body {
+      background-image: -moz-linear-gradient(right bottom, #99CA7C 0%, #89A8F5 76%);
+      background-image: -webkit-linear-gradient(right bottom, #99CA7C 0%, #89A8F5 76%);
+      background-image: -ms-linear-gradient(right bottom, #99CA7C 0%, #89A8F5 76%);
+      background-image: linear-gradient(to right bottom, #99CA7C 0%, #89A8F5 76%);
+      font-family: Lucida Grande;
+      -webkit-font-smoothing: antialiased;
+      color: #222;
+    }
+    #content {
+      margin: 3em auto;
+      padding: 2em;
+      background-color: white;
+      max-width: 640px;
+    }
+    input.submitPayment {
+      font-size: 16px;
+      margin-top: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div ng-app="myapp" id="content">
+
+    <h1>Dog Treats Ltd.</h1>
+
+    <div ng-controller="checkoutCtrl">
+
+      <h3>Pay with Braingular</h3>
+
+      <p>
+        You're trying to purchase {{treats}} dog treats.
+        <button ng-click="changeTreatAmount(-1)">less</button>
+        <button ng-click="changeTreatAmount(150)">more</button>
+      </p>
+
+      <form id="payment-form" action="/purchase_something" method="GET">
+        <div id="braintree-dropin"></div>
+
+        <input
+          type="hidden"
+          name="amount"
+          value="{{total()}}"
+          />
+
+        <input
+          type="submit"
+          value="Pay ${{total()}}"
+          class="submitPayment"
+          />
+      </form>
+    </div>
+  </div>
+
+  <!-- Load Angular -->
+  <script src="//cdn.partywavejs.org/angular"></script>
+
+  <!-- Assign angular to the window -->
+  <!-- (party wave delivers it as a CommonJS module but ng-braintree looks for it on window) -->
+  <script>
+    window.angular = require('angular');
+  </script>
+
+  <!-- Braintree v.zero JS (includes Dropin) -->
+  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+  <!-- Include ng-braintree -->
+  <script src="http://localhost:8000/module.js"></script>
+
+  <!-- Now set up our app -->
+  <script>
+    var app = angular.module('myapp', ['ng-braintree']);
+
+    // Your Angular code goes here
+    app.controller('checkoutCtrl', function($scope, $http) {
+
+      $scope.treats = 3;
+      $scope.treatPrice = 8;
+
+      var yourClientTokenURL = '/client_token';
+
+      $http.get(yourClientTokenURL).success(function(token) {
+        braintree.setup(token, 'dropin', {
+          container: 'braintree-dropin'
+        });
+      });
+
+      $scope.changeTreatAmount = function(amount) {
+        if ($scope.treats + amount < 0) return;
+        $scope.treats += amount;
+      };
+
+      $scope.total = function() {
+        return $scope.treats * $scope.treatPrice;
+      };
+    });
+  </script>
+</body>
+</html>
