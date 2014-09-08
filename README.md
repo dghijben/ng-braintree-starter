@@ -11,7 +11,7 @@ npm install
 ```
 
 1. Get your merchant ID, client token, public key and private key from the [Sandbox](https://sandbox.braintreegateway.com/)
-2. Put those credentials into `[app.js](app.js)`
+2. Put those credentials into [`app.js`](app.js)
 
 ```bash
 npm start
